@@ -44,11 +44,15 @@ body {
     <link rel="icon" href="/cat-a2.png" />
   </head>
    <body>
-    <img src="/2026websitesandboxorsomething/Wonny Cat's Site biggy new logo.png" alt="Logo of this website" class="center-image" width="700">
+    <img src="/2026websitesandboxorsomething/Wonny Cat's Site biggy new logo.png" alt="Logo of this website" class="center-image" width="850">
     <h1>What is the website that is red, funny, weird and crazy?</h1>
     <h1>It's <b>Wonny Cat Site!</b></h1>
     <h2>Click on the door to see something crazy!!!</h2>
-    <a href="/mainpage.html" onclick="new Audio('https://file.garden/aYbz4n2Q7yIpGSkH/sounds/opendoor.wav').play();">
+    <a href="/mainpage.html" onclick="
+       event.preventDefault(); 
+    const audio = new Audio('https://file.garden/aYbz4n2Q7yIpGSkH/sounds/opendoor.wav'); 
+    audio.play(); 
+    audio.onended = () => { window.location.href = '/mainpage.html'; };">
      <img src="/2026websitesandboxorsomething/wonnydoor.svg" alt="knock knock" class="center-image" width="300" height="300">
     </a>
     <h2>Note: Not mobile-friendly :(</h2>
