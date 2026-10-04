@@ -39,11 +39,21 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-      ul {
-  text-align: center;
+      .center-container {
+  display: flex;
+  justify-content: center; /* Centers the whole list box on the page */
 }
-      li {
-  text-align: center;
+
+ul {
+  list-style-type: disc;      /* Ensures the dots/bullets show up */
+  list-style-position: outside; /* Keeps bullets in their own column on the left */
+  padding-left: 20px;         /* Creates room for the dots */
+  margin: 0;
+}
+
+li {
+  text-align: left;           /* Ensures text aligns nicely next to its dot */
+  margin-bottom: 8px;         /* Adds space between list items */
 }
     
 </style>
@@ -68,6 +78,7 @@ body {
      <img src="/2026websitesandboxorsomething/rating_system/Web +7.svg" alt="Web +7" class="center-image">
     <h2><b>Quick guide:</b></h2>
      <h3>Button shortcuts (non-mobile only)</h3>
+     <div class="center-container">
       <ul>
         <li>[M] - Start/Mue BGM (Background music, start by default)</li>
         <li>[A] - Make ads visible/invisible (invisible by default)</li>
