@@ -14,7 +14,7 @@
 
   /* Load CSS */
   var kaboodleStyle = document.createElement("link");
-  kaboodleStyle.href = kaboodleRoot + "/adparser.css";
+  kaboodleStyle.href = kaboodleRoot + "https://wonnycat.github.io/2026websitesandboxorsomething/adparser.css";
   kaboodleStyle.rel = "stylesheet";
   kaboodleStyle.type = "text/css";
   document.head.appendChild(kaboodleStyle);
