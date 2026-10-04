@@ -1,8 +1,8 @@
 (function(window, undefined){ 
   /* Options */
   var creatives = [
-    {"title": "", "creative": "/comicad.png", "href": "/homecomic"},
-    {"title": "", "creative": "/voicewanted.png", "href": "/howtobeanvoiceactor"},
+    {"title": "", "creative": "/2026websitesandboxorsomething/comicad.png", "href": "/homecomic"},
+    {"title": "", "creative": "/2026websitesandboxorsomething/voicewanted.png", "href": "/howtobeanvoiceactor"},
   ];
 
   /* Get the current script element */
