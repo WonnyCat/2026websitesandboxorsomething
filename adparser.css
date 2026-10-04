@@ -1,0 +1,29 @@
+/* Center the header and layout everything inside the module */
+.kaboodle-module {
+  text-align: center;
+}
+
+/* Align the dynamically generated item wrappers and iframes to the center */
+.kaboodle-items,
+.kaboodle-iframes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Ensure the wrapper individual containers center their internal image and text */
+.kaboodle-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 10px auto; /* Centers the item box itself */
+}
+
+/* Center images explicitly if they act as block elements */
+.kaboodle-item img {
+  display: block;
+  margin: 0 auto;
+}
