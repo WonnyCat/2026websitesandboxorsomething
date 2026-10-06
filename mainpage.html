@@ -119,5 +119,30 @@ ul {
     <br>
     <p id="copyright-text"></p>
     <script src="/2026websitesandboxorsomething/copyright.js"></script>
+    <audio id="bgm" loop>
+     <source src="https://ia601501.us.archive.org/32/items/eggs_20250209/Eggs.mp3">
+    </audio>
+    <script>
+  let end = 0; // 0 = OFF (default), 1 = ON
+  const audio = document.getElementById("bgm");
+
+  document.addEventListener("keydown", function(event) {
+    if (event.key.toLowerCase() === "m") {
+
+      if (end === 0) {
+        alert("Music is on!");
+        audio.play();
+        end = 1;
+
+      } else {
+        alert("Music is off!");
+        audio.pause();
+        audio.currentTime = 0;
+        end = 0;
+      }
+
+    }
+  });
+</script>
   </body>
 </html>
