@@ -86,9 +86,9 @@
     var iframeWrapper = document.createElement("div");
     iframeWrapper.className = "kaboodle-iframes";
     iframeWrapper.innerHTML = `
-      <iframe width="300" height="300" style="border:none" src="https://neocities.org" name="TabbyAds"></iframe>
-      <iframe width="180" height="180" style="border:none" src="https://neocities.org" name="neolink"></iframe>
-      <iframe width="468" height="60" style="border:none" src="https://neocities.org" name="bannerlink"></iframe>
+      <iframe width="300" height="300" style="border:none" src="https://tabbygarf.neocities.org/tabbyads/embed.html" name="TabbyAds"></iframe>
+      <iframe width="180" height="180" style="border:none" src="https://dimden.neocities.org/navlink/" name="neolink"></iframe>
+      <iframe width="468" height="60" style="border:none" src="https://hbaguette.neocities.org/bannerlink/embed.html" name="bannerlink"></iframe>
     `;
     kaboodleItems.appendChild(iframeWrapper);
   }
