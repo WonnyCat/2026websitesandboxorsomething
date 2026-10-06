@@ -12,7 +12,6 @@
   var src = kaboodleTag.src;
   var kaboodleRoot = src.substring(0, src.lastIndexOf("/"));
 
-  /* Load CSS */
   var kaboodleStyle = document.createElement("link");
   kaboodleStyle.href = kaboodleRoot + "/adparser.css";
   kaboodleStyle.rel = "stylesheet";
@@ -21,14 +20,16 @@
 
   var numRows = kaboodleTag.dataset.numRows || 1;
 
-  /* Main module wrapper */
   var kaboodleModule = document.createElement("div");
   kaboodleModule.className = "kaboodle-module";
+  
+  kaboodleModule.style.display = "none";
+  
   kaboodleTag.parentNode.insertBefore(kaboodleModule, kaboodleTag.nextSibling);
 
   var kaboodleHeader = document.createElement("a");
   kaboodleHeader.className = "kaboodle-header";
-  kaboodleHeader.href = 'https://wonny-cat-and-friends.neocities.org/';
+  kaboodleHeader.href = 'https://neocities.org';
   kaboodleHeader.innerHTML = "Ads Section brought to you by KK Productions";
   kaboodleModule.appendChild(kaboodleHeader);
 
@@ -38,6 +39,19 @@
 
   randomize(creatives);
   window.addEventListener("resize", loadItems, false);
+
+  window.addEventListener("keydown", function(event) {
+    // Check if the pressed key is 'A' or 'a'
+    if (event.key === "a" || event.key === "A") {
+      if (kaboodleModule.style.display === "none") {
+        kaboodleModule.style.display = "block";
+        // Trigger a layout recalculation so responsive elements size correctly upon opening
+        loadItems(); 
+      } else {
+        kaboodleModule.style.display = "none";
+      }
+    }
+  }, false);
 
   function loadItems (){
     // Clear existing content
@@ -49,7 +63,6 @@
     var numCols = Math.floor(width / 600.0);
     if (numCols < 1) numCols = 1;
 
-    // Load image creatives
     for(var i = 0; i < numCols * numRows; i++){
       var creative = creatives[i % creatives.length];
       var kaboodleItemLink = document.createElement("a");
@@ -70,13 +83,12 @@
       kaboodleItemWrapper.appendChild(kaboodleItemCaption);
     }
 
-    // ✅ Add your 3 external iframe ads
     var iframeWrapper = document.createElement("div");
     iframeWrapper.className = "kaboodle-iframes";
     iframeWrapper.innerHTML = `
-      <iframe width="300" height="300" style="border:none" src="https://tabbygarf.neocities.org/tabbyads/embed.html" name="TabbyAds"></iframe>
-      <iframe width="180" height="180" style="border:none" src="https://dimden.neocities.org/navlink/" name="neolink"></iframe>
-      <iframe width="468" height="60" style="border:none" src="https://hbaguette.neocities.org/bannerlink/embed.html" name="bannerlink"></iframe>
+      <iframe width="300" height="300" style="border:none" src="https://neocities.org" name="TabbyAds"></iframe>
+      <iframe width="180" height="180" style="border:none" src="https://neocities.org" name="neolink"></iframe>
+      <iframe width="468" height="60" style="border:none" src="https://neocities.org" name="bannerlink"></iframe>
     `;
     kaboodleItems.appendChild(iframeWrapper);
   }
